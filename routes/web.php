@@ -26,8 +26,6 @@ Route::get('/auth/redirect/{provider}', function ($provider) {
 })->name('auth.redirect');
 Route::get('/auth/callback/{provider}',[AuthController::class,'callback'])->name('auth.callback');
 
-
-
 Route::get('/', function () {
-    return view('admin.layout.master');
+    return view('front.layout.master');
 });
