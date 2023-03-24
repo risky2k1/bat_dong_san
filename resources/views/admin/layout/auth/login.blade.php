@@ -29,11 +29,17 @@
                 <p class="text-muted mb-4">Enter your email address and password to access account.</p>
 
                 <!-- form -->
-                <form action="#">
+                <form action="{{route('logging')}}">
                     <div class="form-group">
-                        <label for="emailaddress">Email address</label>
-                        <input class="form-control" type="email" id="emailaddress" required=""
+                        <label for="email">Email address</label>
+                        <input class="form-control" type="email" id="email" required=""
                                placeholder="Enter your email">
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                         </span>
+                        @enderror
+
                     </div>
                     <div class="form-group">
                         <a href="pages-recoverpw-2.html" class="text-muted float-right"><small>Forgot your
@@ -41,6 +47,11 @@
                         <label for="password">Password</label>
                         <input class="form-control" type="password" required="" id="password"
                                placeholder="Enter your password">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                         </span>
+                        @enderror
                     </div>
                     <div class="form-group mb-3">
                         <div class="custom-control custom-checkbox">
@@ -57,16 +68,17 @@
                         <p class="text-muted font-16">Log in with</p>
                         <ul class="social-list list-inline mt-3">
                             <li class="list-inline-item">
-                                <a href="" class="social-list-item border-info text-info"><i
-                                            class="mdi mdi-github-circle"></i></a>
+                                <a href="{{route('auth.redirect','github')}}"
+                                   class="social-list-item border-info text-info"><i
+                                        class="mdi mdi-github-circle"></i></a>
                             </li>
                             <li class="list-inline-item">
                                 <a href=" " class="social-list-item border-info text-info"><i
-                                            class="mdi mdi-gitlab"></i></a>
+                                        class="mdi mdi-gitlab"></i></a>
                             </li>
                             <li class="list-inline-item">
                                 <a href="javascript: void(0);" class="social-list-item border-info text-info"><i
-                                            class="mdi mdi-linkedin"></i></a>
+                                        class="mdi mdi-linkedin"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -75,7 +87,7 @@
 
                 <!-- Footer-->
                 <footer class="footer footer-alt">
-                    <p class="text-muted">Don't have an account? <a href="pages-register-2.html"
+                    <p class="text-muted">Don't have an account? <a href="{{route('register')}}"
                                                                     class="text-muted ml-1"><b>Sign Up</b></a></p>
                 </footer>
 
@@ -89,7 +101,7 @@
         <div class="auth-user-testimonial">
             <h2 class="mb-3">I love the color!</h2>
             <p class="lead"><i class="mdi mdi-format-quote-open"></i> It's a elegent templete. I love it very much! . <i
-                        class="mdi mdi-format-quote-close"></i>
+                    class="mdi mdi-format-quote-close"></i>
             </p>
             <p>
                 - Hyper Admin User

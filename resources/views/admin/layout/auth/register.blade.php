@@ -37,29 +37,49 @@
                     </div>
                 @endif
                 <!-- form -->
-                <form action="" method="post">
+                <form action="{{route('registering')}}" method="post">
                     @csrf
+                    @guest
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input class="form-control" type="text" id="name" placeholder="Enter your name" required
                                    name="name">
                         </div>
                         <div class="form-group">
-                            <label for="emailaddress">Email address</label>
-                            <input class="form-control" type="email" id="emailaddress" required
+                            <label for="email">Email address</label>
+                            <input class="form-control" type="email" id="email" required
                                    placeholder="Enter your email" name="email">
                         </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input class="form-control" type="password" required id="password"
-                               placeholder="Enter your password" name="password">
-                    </div>
-                    
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" required id="password"
+                                   placeholder="Enter your password" name="password">
+                        </div>
+                    @endguest
+
+                    @auth
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input class="form-control" type="text" id="name" placeholder="Enter your name" disabled
+                                   name="name" value="{{auth()->user()->name}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input class="form-control" type="email" id="email" disabled
+                                   placeholder="Enter your email" name="email" value="{{auth()->user()->email}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" required id="password"
+                                   placeholder="Enter your password" name="password">
+                        </div>
+                    @endauth
+
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="checkbox-signup">
                             <label class="custom-control-label" for="checkbox-signup">I accept <a
-                                        href="javascript: void(0);" class="text-muted">Terms and Conditions</a></label>
+                                    href="javascript: void(0);" class="text-muted">Terms and Conditions</a></label>
                         </div>
                     </div>
                     <div class="form-group mb-0 text-center">
@@ -72,7 +92,7 @@
 
                 <!-- Footer-->
                 <footer class="footer footer-alt">
-                    <p class="text-muted">Already have account? <a href="pages-login-2.html" class="text-muted ml-1"><b>Log
+                    <p class="text-muted">Already have account? <a href="{{route('login')}}" class="text-muted ml-1"><b>Log
                                 In</b></a></p>
                 </footer>
 
@@ -86,7 +106,7 @@
         <div class="auth-user-testimonial">
             <h2 class="mb-3">I love the color!</h2>
             <p class="lead"><i class="mdi mdi-format-quote-open"></i> It's a elegent templete. I love it very much! . <i
-                        class="mdi mdi-format-quote-close"></i>
+                    class="mdi mdi-format-quote-close"></i>
             </p>
             <p>
                 - Hyper Admin User
