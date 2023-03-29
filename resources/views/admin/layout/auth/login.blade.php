@@ -29,8 +29,7 @@
                 <p class="text-muted mb-4">Enter your email address and password to access account.</p>
 
                 <!-- form -->
-                <form method="post" action="{{route('logging')}}">
-                    @csrf
+                <form action="{{route('logging')}}">
                     <div class="form-group">
                         <label for="email">Email address</label>
                         <input class="form-control" type="email" id="email" required=""
