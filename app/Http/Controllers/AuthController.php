@@ -13,7 +13,7 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        View::share('title','Real Estate');
+        View::share('title', 'Real Estate');
     }
     public function login()
     {
@@ -26,11 +26,11 @@ class AuthController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-
+        dd($credentials);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->route('welcome');
+            return redirect()->route('admin.welcome');
         } else {
             return redirect()->route('login')->withErrors([
                 'email' => 'Email hoặc tài khoản không đúng',
@@ -49,7 +49,6 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         return redirect()->route('login');
-
     }
 
     public function callback($provider)
@@ -69,7 +68,7 @@ class AuthController extends Controller
         Auth::login($user, true);
 
         if ($isExistedUser) {
-            return redirect()->route('welcome');
+            return redirect()->route('admin.welcome');
         } else {
             return redirect()->route('register');
         }
@@ -95,6 +94,6 @@ class AuthController extends Controller
             Auth::login($newUser);
         }
 
-        return redirect()->route('welcome');
+        return redirect()->route('admin.welcome');
     }
 }
