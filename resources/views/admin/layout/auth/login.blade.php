@@ -8,7 +8,7 @@
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description"/>
     <meta content="Coderthemes" name="author"/>
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
 
     <!-- App css -->
     <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css">
@@ -27,12 +27,12 @@
                 <!-- title-->
                 <h4 class="mt-0">Sign In</h4>
                 <p class="text-muted mb-4">Enter your email address and password to access account.</p>
-
                 <!-- form -->
-                <form action="{{route('logging')}}">
+                <form action="{{route('logging')}}" method="post">
+                    @csrf
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input class="form-control" type="email" id="email" required=""
+                        <input class="form-control" type="email" name="email" required=""
                                placeholder="Enter your email">
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -45,7 +45,7 @@
                         <a href="pages-recoverpw-2.html" class="text-muted float-right"><small>Forgot your
                                 password?</small></a>
                         <label for="password">Password</label>
-                        <input class="form-control" type="password" required="" id="password"
+                        <input class="form-control" type="password" required="" name="password"
                                placeholder="Enter your password">
                         @error('password')
                         <span class="invalid-feedback" role="alert">

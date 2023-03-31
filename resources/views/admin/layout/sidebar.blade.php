@@ -1,13 +1,20 @@
 <div class="left-side-menu mm-show">
 
-
     <!-- LOGO -->
     <a href="index.html" class="logo text-center logo-dark">
         <span class="logo-lg">
-            <img src="{{asset('css/logo-dark.png')}}" alt="" height="16">
+            <img src="{{asset('images/logo-dark.png')}}" alt="" height="16">
         </span>
         <span class="logo-sm">
-            <img src="{{asset('css/logo-dark.png')}}" alt="" height="16">
+            <img src="{{asset('images/logo-dark.png')}}" alt="" height="16">
+        </span>
+    </a>
+    <a href="index.html" class="logo text-center logo-light">
+        <span class="logo-lg">
+            <img src="{{asset('images/logo-dark.png')}}" alt="" height="16">
+        </span>
+        <span class="logo-sm">
+            <img src="{{asset('images/logo-dark.png')}}" alt="" height="16">
         </span>
     </a>
 
@@ -22,21 +29,20 @@
                         <div class="simplebar-content" style="padding: 0px;">
                             <!--- Sidemenu -->
                             <ul class="metismenu side-nav mm-show">
-                            <li class="side-nav-title side-nav-item">Navigation</li>
-                            <li class="side-nav-item">
-                                <a href="{{route('admin.welcome')}}" class="side-nav-link">
-                                    <i class="uil-home-alt"></i>
-                                    <span> Dashboards </span>
-                                </a>
+                                <li class="side-nav-title side-nav-item">Navigation</li>
+                                <li class="side-nav-item">
+                                    <a href="{{route('admin.welcome')}}" class="side-nav-link">
+                                        <i class="uil-home-alt"></i>
+                                        <span> Dashboards </span>
+                                    </a>
 
-                            </li>
+                                </li>
 
 
                                 <li class="side-nav-title side-nav-item">Manage</li>
 
                                 <li class="side-nav-item">
-                                    <a href="{{route('admin.users.index')}}"
-                                     class="side-nav-link">
+                                    <a href="{{route('admin.users.index')}}" class="side-nav-link">
                                         <i class="uil-home-alt"></i>
                                         <span> Users </span>
                                     </a>
@@ -44,8 +50,8 @@
 
                                 <li class="side-nav-item">
                                     <a href=""
-{{--                                  route('admin.posts.index')--}}
-                                     class="side-nav-link">
+                                       {{--                                  route('admin.posts.index')--}}
+                                       class="side-nav-link">
                                         <i class="uil-home-alt"></i>
                                         <span> Posts </span>
                                     </a>

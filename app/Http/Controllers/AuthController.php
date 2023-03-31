@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\UserRoleEnum;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,8 +14,9 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        View::share('title','Real Estate');
+        View::share('title', 'Real Estate');
     }
+
     public function login()
     {
         return view('admin.layout.auth.login');
@@ -29,8 +31,11 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            return redirect()->route('welcome');
+            if (Auth::user()->role == UserRoleEnum::ADMIN) {
+                return redirect()->route('admin.welcome');
+            } else {
+                return redirect()->route('homepage');
+            }
         } else {
             return redirect()->route('login')->withErrors([
                 'email' => 'Email hoặc tài khoản không đúng',
@@ -69,7 +74,11 @@ class AuthController extends Controller
         Auth::login($user, true);
 
         if ($isExistedUser) {
-            return redirect()->route('welcome');
+            if (Auth::user()->role == UserRoleEnum::ADMIN) {
+                return redirect()->route('admin.welcome');
+            } else {
+                return redirect()->route('homepage');
+            }
         } else {
             return redirect()->route('register');
         }
@@ -95,6 +104,11 @@ class AuthController extends Controller
             Auth::login($newUser);
         }
 
-        return redirect()->route('welcome');
+        if (Auth::user()->role == UserRoleEnum::ADMIN) {
+            return redirect()->route('admin.welcome');
+        } else {
+            return redirect()->route('homepage');
+        }
+
     }
 }
