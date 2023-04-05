@@ -14,6 +14,9 @@ use Laravel\Socialite\Facades\Socialite;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('front.layout.master');
+})->name('homepage');
 
 Route::get('login',[AuthController::class,'login'])->name('login');
 Route::post('logging',[AuthController::class,'logging'])->name('logging');
@@ -26,6 +29,3 @@ Route::get('/auth/redirect/{provider}', function ($provider) {
 })->name('auth.redirect');
 Route::get('/auth/callback/{provider}',[AuthController::class,'callback'])->name('auth.callback');
 
-Route::get('/', function () {
-    return view('front.layout.master');
-})->name('homepage');
