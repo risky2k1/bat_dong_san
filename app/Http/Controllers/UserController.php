@@ -11,8 +11,8 @@ class UserController extends Controller
     public function __construct()
     {
         //get table name
-        $this->table= ucfirst((new User())->getTable());
-        View::share('title',$this->table);
+        $table= ucfirst((new User())->getTable());
+        View::share('title',$table);
     }
 
     public function index()
