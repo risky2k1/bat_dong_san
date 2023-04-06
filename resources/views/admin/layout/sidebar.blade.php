@@ -26,13 +26,13 @@
             <div class="simplebar-mask">
                 <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
                     <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;">
-                        <div class="simplebar-content" style="padding: 0px;">
+                        <div class="simplebar-content" style="padding: 0px; height: 95%">
                             <!--- Sidemenu -->
                             <ul class="metismenu side-nav mm-show">
                                 <li class="side-nav-title side-nav-item">Navigation</li>
                                 <li class="side-nav-item">
                                     <a href="{{route('admin.welcome')}}" class="side-nav-link">
-                                        <i class="uil-home-alt"></i>
+                                        <i class="mdi mdi-view-dashboard"></i>
                                         <span> Dashboards </span>
                                     </a>
 
@@ -43,8 +43,21 @@
 
                                 <li class="side-nav-item">
                                     <a href="{{route('admin.users.index')}}" class="side-nav-link">
-                                        <i class="uil-home-alt"></i>
+                                        <i class="uil-user"></i>
                                         <span> Users </span>
+                                    </a>
+                                </li>
+
+                                <li class="side-nav-item">
+                                    <a href="{{route('admin.plans.index')}}" class="side-nav-link">
+                                        <i class="mdi mdi-notebook-outline"></i>
+                                        <span> Plans </span>
+                                    </a>
+                                </li>
+                                <li class="side-nav-item">
+                                    <a href="{{route('admin.plans.index')}}" class="side-nav-link">
+                                        <i class="uil-plus-circle"></i>
+                                        <span> User Subscription</span>
                                     </a>
                                 </li>
 
@@ -52,7 +65,7 @@
                                     <a href=""
                                        {{--                                  route('admin.posts.index')--}}
                                        class="side-nav-link">
-                                        <i class="uil-home-alt"></i>
+                                        <i class="mdi mdi-post"></i>
                                         <span> Posts </span>
                                     </a>
                                 </li>
@@ -62,7 +75,12 @@
                                         <span> Properties </span>
                                     </a>
                                 </li>
-
+                                <li class="side-nav-item">
+                                    <a href="{{route('homepage')}}" class="btn btn-block btn-primary bottom-0">
+                                        <i class="uil-home-alt"></i>
+                                        <span> Back to home page </span>
+                                    </a>
+                                </li>
 
                             </ul>
                             <div class="clearfix"></div>
@@ -70,8 +88,9 @@
                     </div>
                 </div>
             </div>
-            <div class="simplebar-placeholder" style="width: auto; height: 100px;"></div>
+            <div class="simplebar-placeholder" style="width: auto; height: 100px;"><a href=""></a></div>
         </div>
     </div>
+
     <!-- Sidebar -left -->
 </div>

@@ -21,13 +21,14 @@
                 <p><a href="{{$user->phone}}">{{$user->phone}}</a></p>
             </td>
             <td>
-                <span>{{$user->role}}</span>
+                <span>{{$user->role_name}}</span>
             </td>
             <td>
 
             </td>
             <td class="table-action">
                 <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+
             </td>
         </tr>
         @endforeach
