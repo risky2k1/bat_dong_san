@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "afda0e76f63df89007ccf9c32578eb66",
+    "content-hash": "1a70a2a31c8830a20bbf3c77af2ca344",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -145,6 +145,70 @@
                 }
             ],
             "time": "2023-02-13T14:09:29+00:00"
+        },
+        {
+            "name": "bpuig/laravel-subby",
+            "version": "v7.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bpuig/laravel-subby.git",
+                "reference": "f7b13460763e741e4fc058b964ae90e3c08b9dce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bpuig/laravel-subby/zipball/f7b13460763e741e4fc058b964ae90e3c08b9dce",
+                "reference": "f7b13460763e741e4fc058b964ae90e3c08b9dce",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.13.3|^3.1.4",
+                "laravel/framework": "^v9.0|^v10.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "illuminate/console": "^9.0|^10.0",
+                "illuminate/container": "^9.0|^10.0",
+                "orchestra/testbench": "^7.0|^8.0",
+                "phpunit/phpunit": "^9.5.8|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bpuig\\Subby\\SubbyServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bpuig\\Subby\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Borja Puig"
+                }
+            ],
+            "description": "Laravel Subby is a flexible plans and subscription management system for Laravel.",
+            "keywords": [
+                "database",
+                "feature",
+                "laravel",
+                "plan",
+                "recurring",
+                "subscription",
+                "value"
+            ],
+            "support": {
+                "docs": "https://github.com/bpuig/laravel-subby/blob/master/README.md",
+                "issues": "https://github.com/bpuig/laravel-subby/issues",
+                "source": "https://github.com/bpuig/laravel-subby"
+            },
+            "time": "2023-02-19T17:12:25+00:00"
         },
         {
             "name": "brick/math",
