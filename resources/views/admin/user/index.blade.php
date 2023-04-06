@@ -12,25 +12,25 @@
         </thead>
         <tbody>
         @foreach($users as $user)
-        <tr>
-            <td class="table-user">
-                <span>{{$user->name}}</span>
-                <br>
-                <a href="mailto:{{$user->email}}">{{$user->email}}</a>
-                <br>
-                <p><a href="{{$user->phone}}">{{$user->phone}}</a></p>
-            </td>
-            <td>
-                <span>{{$user->role_name}}</span>
-            </td>
-            <td>
+            <tr>
+                <td class="table-user">
+                    <span>{{$user->name}}</span>
+                    <br>
+                    <a href="mailto:{{$user->email}}">{{$user->email}}</a>
+                    <br>
+                    <p><a href="{{$user->phone}}">{{$user->phone}}</a></p>
+                </td>
+                <td>
+                    <span>{{$user->role_name}}</span>
+                </td>
+                <td>
 
-            </td>
-            <td class="table-action">
-                <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                </td>
+                <td class="table-action">
+                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
 
-            </td>
-        </tr>
+                </td>
+            </tr>
         @endforeach
         </tbody>
     </table>
