@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -14,9 +15,7 @@ use Laravel\Socialite\Facades\Socialite;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('front.layout.master');
-})->name('homepage');
+Route::get('/', [ HomeController::class,'index'])->name('homepage');
 
 Route::get('login',[AuthController::class,'login'])->name('login');
 Route::post('logging',[AuthController::class,'logging'])->name('logging');
