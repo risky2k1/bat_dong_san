@@ -26,12 +26,9 @@ return new class extends Migration
             $table->integer('bathrooms')->nullable();
             $table->boolean('air_condition')->nullable();
             $table->boolean('swimming_pool')->nullable();
-            $table->boolean('central_heating')->nullable();
-            $table->boolean('laundry_room')->nullable();
-            $table->boolean('gym')->nullable();
-            $table->boolean('window_covering')->nullable();
             $table->boolean('internet')->nullable();
             $table->boolean('is_active')->nullable();
+            $table->smallInteger('type');
             $table->softDeletes();
             $table->timestamps();
         });

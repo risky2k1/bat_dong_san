@@ -53,8 +53,7 @@ class AuthController extends Controller
     {
         Auth::logout();
         $request->session()->invalidate();
-        return redirect()->route('login');
-
+        return redirect()->route('homepage');
     }
 
     public function callback($provider)
